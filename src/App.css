@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.footer {
+  height: 70px;
+  background: #999999;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+ul {
+  margin: 0 auto;
+  max-width: 600px;
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+  margin: 1rem;
+  min-height: 100px;
+}
+
+button {
+  border-radius: 0px;
+  background: #bbded6;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+span {
+  display: block;
+  padding: 1rem 0px;
+}
