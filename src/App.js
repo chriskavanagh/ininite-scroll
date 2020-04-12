@@ -9,8 +9,9 @@ import "./App.css";
 function App() {
   const [query, setQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
-
   const url2 = "http://openlibrary.org/search.json";
+
+  //destructure vars from custom useRestApi hook
   const { data: myData, hasMore, loading, error } = useRestApi(
     url2,
     query,
@@ -40,7 +41,13 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" value={query} onChange={handleSearch}></input>
+      <h1 className="h1__title">Book Search</h1>
+      <input
+        type="text"
+        value={query}
+        onChange={handleSearch}
+        placeholder="Type something to search"
+      ></input>
       <ul>
         {myData.map((book, index) => {
           if (myData.length === index + 1) {

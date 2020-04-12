@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.h1__title {
+  color: white;
+  margin: 1rem auto;
+}
+
 .footer {
   height: 70px;
   background: #999999;
@@ -24,6 +29,7 @@ li {
   padding: 1rem;
   margin: 1rem;
   min-height: 100px;
+  color: white;
 }
 
 button {
@@ -37,4 +43,15 @@ button {
 span {
   display: block;
   padding: 1rem 0px;
+}
+input {
+  width: 15%;
+  height: 25px;
+  margin-top: 2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+input[type="text"]::placeholder {
+  text-align: center;
 }

@@ -17,6 +17,7 @@ function useRestApi(url, query, pageNumber) {
 
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
+
     const fetchData = async () => {
       try {
         const { data } = await axios(url, {
@@ -25,7 +26,7 @@ function useRestApi(url, query, pageNumber) {
         });
 
         setData((prevState) => {
-          return [...prevState, ...data.docs.map((b) => b.title)];
+          return [...new Set([...prevState, ...data.docs.map((b) => b.title)])];
         });
 
         setHasMore(data.docs.length > 0);
@@ -36,7 +37,7 @@ function useRestApi(url, query, pageNumber) {
       }
     };
     fetchData();
-    return () => source.cancel("Operation canceled by the user.");
+    return () => source.cancel("Operation Canceled.");
   }, [url, setData, query, pageNumber]);
 
   return { loading, error, data, hasMore };
